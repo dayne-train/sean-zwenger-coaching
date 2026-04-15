@@ -504,56 +504,51 @@ section { padding: 7rem 3rem; }
   border-bottom: 1px solid var(--rule);
 }
 
-.services-list {
+.services-grid {
   display: grid;
-  gap: 0;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
 }
 
-.service-row {
-  display: grid;
-  grid-template-columns: 2.5rem 1fr;
-  gap: 2rem;
-  padding: 2.25rem 0;
-  border-bottom: 1px solid var(--rule);
-  transition: padding-left 0.3s ease;
-  cursor: default;
+.service-card {
+  background: var(--bg-elevated);
+  padding: 2.25rem;
+  transition: background 0.3s ease;
 }
 
-.service-row:first-child {
-  border-top: 1px solid var(--rule);
+.service-card:hover {
+  background: var(--bg-surface);
 }
 
-.service-row:hover {
-  padding-left: 0.75rem;
-}
-
-.service-row:hover .service-num {
+.service-card:hover .service-num {
   color: var(--gold);
 }
 
 .service-num {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 0.9rem;
   letter-spacing: 0.08em;
   color: var(--text-muted);
-  padding-top: 0.15rem;
+  display: block;
+  margin-bottom: 1.25rem;
   transition: color 0.3s ease;
 }
 
-.service-content h3 {
+.service-card h3 {
   font-family: var(--font-body);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   color: var(--text);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
-.service-content p {
-  font-size: 0.95rem;
+.service-card p {
+  font-size: 0.9rem;
   color: var(--text-dim);
   line-height: 1.7;
-  max-width: 580px;
 }
 
 /* ================================================
@@ -770,6 +765,10 @@ footer {
     gap: 2rem;
   }
 
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .test-grid {
     grid-template-columns: 1fr;
   }
@@ -849,13 +848,9 @@ footer {
   .stat-num { font-size: 2rem; }
 
   /* Services mobile */
-  .service-row {
+  .services-grid {
     grid-template-columns: 1fr;
-    gap: 0;
-    padding: 1.75rem 0;
   }
-
-  .service-num { display: none; }
 
   /* CTA mobile */
   .cta-section { padding: 5rem 1.5rem; }
