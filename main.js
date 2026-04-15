@@ -72,6 +72,29 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
 
+// Rotating hero words
+const words = document.querySelectorAll('.hero-word');
+if (words.length > 1) {
+  let current = 0;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    setInterval(() => {
+      const prev = current;
+      current = (current + 1) % words.length;
+
+      words[prev].classList.remove('active');
+      words[prev].classList.add('exit');
+
+      setTimeout(() => {
+        words[prev].classList.remove('exit');
+      }, 500);
+
+      words[current].classList.add('active');
+    }, 2800);
+  }
+}
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
