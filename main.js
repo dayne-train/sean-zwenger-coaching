@@ -6,20 +6,58 @@ window.addEventListener('scroll', () => {
 
 // Mobile menu
 const toggle = document.querySelector('.mobile-toggle');
-const mobileMenu = document.querySelector('.mobile-menu');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuLinks = mobileMenu.querySelectorAll('a');
+
+function openMenu() {
+  toggle.classList.add('open');
+  toggle.setAttribute('aria-expanded', 'true');
+  toggle.setAttribute('aria-label', 'Close menu');
+  mobileMenu.classList.add('open');
+  mobileMenu.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  menuLinks[0].focus();
+}
+
+function closeMenu() {
+  toggle.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-label', 'Open menu');
+  mobileMenu.classList.remove('open');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  toggle.focus();
+}
 
 toggle.addEventListener('click', () => {
-  toggle.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
-  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  const isOpen = mobileMenu.classList.contains('open');
+  isOpen ? closeMenu() : openMenu();
 });
 
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    toggle.classList.remove('open');
-    mobileMenu.classList.remove('open');
-    document.body.style.overflow = '';
-  });
+menuLinks.forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+// Close on Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+    closeMenu();
+  }
+});
+
+// Trap focus in mobile menu
+mobileMenu.addEventListener('keydown', (e) => {
+  if (e.key !== 'Tab') return;
+  const first = menuLinks[0];
+  const last = menuLinks[menuLinks.length - 1];
+
+  if (e.shiftKey && document.activeElement === first) {
+    e.preventDefault();
+    last.focus();
+  } else if (!e.shiftKey && document.activeElement === last) {
+    e.preventDefault();
+    first.focus();
+  }
 });
 
 // Scroll reveal

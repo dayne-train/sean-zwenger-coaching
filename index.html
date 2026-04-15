@@ -12,172 +12,181 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-wordmark">Never<span>Ipe</span></a>
+  <nav aria-label="Main navigation">
+    <a href="#" class="nav-wordmark" aria-label="NeverIpe Coaching, back to top">Never<span>Ipe</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#words">Kind Words</a></li>
       <li><a href="#connect" class="nav-cta-link">Book a Call</a></li>
     </ul>
-    <button class="mobile-toggle" aria-label="Toggle menu">
+    <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <div class="mobile-menu">
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#words">Kind Words</a>
     <a href="#connect">Book a Call</a>
   </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg-accent"></div>
-    <div class="hero-content">
-      <p class="hero-tag">Career Coaching</p>
-      <h1>Don't ripen<br><span class="accent">early.</span></h1>
-      <p class="hero-sub">Navigate career transitions, sharpen your story, and step confidently into the role you were built for.</p>
-      <div class="hero-actions">
-        <a href="#connect" class="btn-gold">
-          Get Started
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#services" class="btn-ghost">How it works</a>
-      </div>
-    </div>
-  </section>
+  <main id="main-content">
 
-  <div class="divider"><hr></div>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-inner">
-      <p class="section-tag reveal">About Sean</p>
-      <h2 class="section-heading reveal">Built on real <span class="thin">experience.</span></h2>
-      <div class="about-layout">
-        <div class="about-portrait reveal">
-          <img src="sean.jpg" alt="Sean Zwenger">
-          <div class="about-portrait-bar"></div>
+    <!-- HERO -->
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-bg-accent" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="hero-tag">Career Coaching</p>
+        <h1>Don't ripen<br><span class="accent">early.</span></h1>
+        <p class="hero-sub">Navigate career transitions, sharpen your story, and step confidently into the role you were built for.</p>
+        <div class="hero-actions">
+          <a href="#connect" class="btn-gold">
+            Get Started
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#services" class="btn-ghost">How it works</a>
         </div>
-        <div class="about-body">
-          <p class="reveal">Sean Zwenger has spent years helping professionals find their footing during pivotal career moments. Whether you're navigating a layoff, eyeing a promotion, or making a complete career change, Sean brings a grounded, no-nonsense approach to coaching.</p>
-          <p class="reveal">His philosophy is simple: you already have what it takes. Coaching is about removing the noise so you can see it clearly and communicate it with confidence.</p>
-          <div class="about-stats reveal">
-            <div>
-              <div class="stat-num">100+</div>
-              <div class="stat-label">Clients coached</div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><hr></div>
+
+    <!-- ABOUT -->
+    <section id="about" aria-label="About Sean">
+      <div class="section-inner">
+        <p class="section-tag reveal">About Sean</p>
+        <h2 class="section-heading reveal">Built on real <span class="thin">experience.</span></h2>
+        <div class="about-layout">
+          <div class="about-portrait reveal">
+            <img src="sean.jpg" alt="Portrait of Sean Zwenger, career coach">
+            <div class="about-portrait-bar" aria-hidden="true"></div>
+          </div>
+          <div class="about-body">
+            <p class="reveal">Sean Zwenger has spent years helping professionals find their footing during pivotal career moments. Whether you're navigating a layoff, eyeing a promotion, or making a complete career change, Sean brings a grounded, no-nonsense approach to coaching.</p>
+            <p class="reveal">His philosophy is simple: you already have what it takes. Coaching is about removing the noise so you can see it clearly and communicate it with confidence.</p>
+            <div class="about-stats reveal" role="list" aria-label="Key stats">
+              <div role="listitem">
+                <div class="stat-num">100+</div>
+                <div class="stat-label">Clients coached</div>
+              </div>
+              <div role="listitem">
+                <div class="stat-num">10+</div>
+                <div class="stat-label">Years in industry</div>
+              </div>
+              <div role="listitem">
+                <div class="stat-num">95%</div>
+                <div class="stat-label">Client satisfaction</div>
+              </div>
             </div>
-            <div>
-              <div class="stat-num">10+</div>
-              <div class="stat-label">Years in industry</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section" id="services" aria-label="Services offered">
+      <div class="section-inner">
+        <p class="section-tag reveal">What I Offer</p>
+        <h2 class="section-heading reveal">Coaching built around <span class="thin">your goals.</span></h2>
+        <div class="services-list reveal-stagger">
+          <div class="service-row">
+            <span class="service-num" aria-hidden="true">01</span>
+            <div class="service-content">
+              <h3>Career Transitions</h3>
+              <p>Whether you're pivoting industries or stepping into a new role, we'll build a strategy that aligns your strengths with your ambitions.</p>
             </div>
-            <div>
-              <div class="stat-num">95%</div>
-              <div class="stat-label">Client satisfaction</div>
+          </div>
+          <div class="service-row">
+            <span class="service-num" aria-hidden="true">02</span>
+            <div class="service-content">
+              <h3>Resume Review</h3>
+              <p>Your resume should tell a story, not just list jobs. We'll craft a document that positions you as the obvious choice.</p>
+            </div>
+          </div>
+          <div class="service-row">
+            <span class="service-num" aria-hidden="true">03</span>
+            <div class="service-content">
+              <h3>Interview Prep</h3>
+              <p>Practice with real scenarios, get honest feedback, and walk into every conversation knowing exactly how to show up.</p>
+            </div>
+          </div>
+          <div class="service-row">
+            <span class="service-num" aria-hidden="true">04</span>
+            <div class="service-content">
+              <h3>Leadership Coaching</h3>
+              <p>Step into leadership with intention. We'll work on executive presence, communication, and the mindset shifts that make great leaders.</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SERVICES -->
-  <section class="services-section" id="services">
-    <div class="section-inner">
-      <p class="section-tag reveal">What I Offer</p>
-      <h2 class="section-heading reveal">Coaching built around <span class="thin">your goals.</span></h2>
-      <div class="services-list reveal-stagger">
-        <div class="service-row">
-          <span class="service-num">01</span>
-          <div class="service-content">
-            <h3>Career Transitions</h3>
-            <p>Whether you're pivoting industries or stepping into a new role, we'll build a strategy that aligns your strengths with your ambitions.</p>
-          </div>
-        </div>
-        <div class="service-row">
-          <span class="service-num">02</span>
-          <div class="service-content">
-            <h3>Resume Review</h3>
-            <p>Your resume should tell a story, not just list jobs. We'll craft a document that positions you as the obvious choice.</p>
-          </div>
-        </div>
-        <div class="service-row">
-          <span class="service-num">03</span>
-          <div class="service-content">
-            <h3>Interview Prep</h3>
-            <p>Practice with real scenarios, get honest feedback, and walk into every conversation knowing exactly how to show up.</p>
-          </div>
-        </div>
-        <div class="service-row">
-          <span class="service-num">04</span>
-          <div class="service-content">
-            <h3>Leadership Coaching</h3>
-            <p>Step into leadership with intention. We'll work on executive presence, communication, and the mindset shifts that make great leaders.</p>
-          </div>
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section" id="words" aria-label="Client testimonials">
+      <div class="section-inner">
+        <p class="section-tag reveal">Kind Words</p>
+        <h2 class="section-heading reveal">What clients <span class="thin">are saying.</span></h2>
+        <div class="test-grid reveal">
+          <blockquote class="test-cell">
+            <p class="test-quote">Sean helped me see what I was bringing to the table when I couldn't see it myself. Within two months, I landed a role I didn't think I was qualified for.</p>
+            <footer>
+              <cite class="test-author">Alex R.</cite>
+              <div class="test-role">Product Manager</div>
+            </footer>
+          </blockquote>
+          <blockquote class="test-cell">
+            <p class="test-quote">The resume work alone was worth it. But the real value was the confidence I walked away with. Sean is the real deal.</p>
+            <footer>
+              <cite class="test-author">Jamie T.</cite>
+              <div class="test-role">Software Engineer</div>
+            </footer>
+          </blockquote>
+          <blockquote class="test-cell">
+            <p class="test-quote">I came in feeling stuck and left with a plan I was genuinely excited about. Sean asks the right questions and actually listens.</p>
+            <footer>
+              <cite class="test-author">Morgan L.</cite>
+              <div class="test-role">Marketing Director</div>
+            </footer>
+          </blockquote>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials-section" id="words">
-    <div class="section-inner">
-      <p class="section-tag reveal">Kind Words</p>
-      <h2 class="section-heading reveal">What clients <span class="thin">are saying.</span></h2>
-      <div class="test-grid reveal">
-        <div class="test-cell">
-          <p class="test-quote">Sean helped me see what I was bringing to the table when I couldn't see it myself. Within two months, I landed a role I didn't think I was qualified for.</p>
-          <div>
-            <div class="test-author">Alex R.</div>
-            <div class="test-role">Product Manager</div>
-          </div>
-        </div>
-        <div class="test-cell">
-          <p class="test-quote">The resume work alone was worth it. But the real value was the confidence I walked away with. Sean is the real deal.</p>
-          <div>
-            <div class="test-author">Jamie T.</div>
-            <div class="test-role">Software Engineer</div>
-          </div>
-        </div>
-        <div class="test-cell">
-          <p class="test-quote">I came in feeling stuck and left with a plan I was genuinely excited about. Sean asks the right questions and actually listens.</p>
-          <div>
-            <div class="test-author">Morgan L.</div>
-            <div class="test-role">Marketing Director</div>
-          </div>
+    <!-- CTA -->
+    <section class="cta-section" id="connect" aria-label="Get in touch">
+      <div class="section-inner">
+        <p class="section-tag reveal">Let's Connect</p>
+        <h2 class="cta-heading reveal">Ready for your<br><span class="accent">next move?</span></h2>
+        <p class="cta-sub reveal">Fill out a short form and Sean will be in touch to schedule your first conversation. No pressure, no commitment.</p>
+        <div class="reveal">
+          <!-- REPLACE HREF WITH YOUR TALLY FORM URL -->
+          <a href="https://tally.so" class="btn-gold" target="_blank" rel="noopener">
+            Fill Out the Intake Form
+            <span class="sr-only">(opens in new tab)</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section class="cta-section" id="connect">
-    <div class="section-inner">
-      <p class="section-tag reveal">Let's Connect</p>
-      <h2 class="cta-heading reveal">Ready for your<br><span class="accent">next move?</span></h2>
-      <p class="cta-sub reveal">Fill out a short form and Sean will be in touch to schedule your first conversation. No pressure, no commitment.</p>
-      <div class="reveal">
-        <!-- REPLACE HREF WITH YOUR TALLY FORM URL -->
-        <a href="https://tally.so" class="btn-gold" target="_blank" rel="noopener">
-          Fill Out the Intake Form
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-mark">Never<span>Ipe</span> Coaching</div>
-      <ul class="footer-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#connect">Connect</a></li>
-      </ul>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#connect">Connect</a></li>
+        </ul>
+      </nav>
       <span class="footer-copy">&copy; 2026 NeverIpe Coaching</span>
     </div>
   </footer>
