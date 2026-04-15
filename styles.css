@@ -552,43 +552,60 @@ section { padding: 7rem 3rem; }
 }
 
 /* ================================================
-   TESTIMONIALS
+   TESTIMONIALS / MARQUEE
    ================================================ */
 .testimonials-section {
   border-bottom: 1px solid var(--rule);
+  overflow: hidden;
 }
 
-.test-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+.marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-card {
+  flex-shrink: 0;
+  width: 380px;
+  background: var(--bg-elevated);
   border: 1px solid var(--rule);
-}
-
-blockquote.test-cell {
+  border-radius: 8px;
+  padding: 2.25rem;
   margin: 0;
-}
-
-.test-cell {
-  padding: 2.5rem;
-  border-right: 1px solid var(--rule);
   display: flex;
   flex-direction: column;
 }
 
-.test-cell footer {
+.marquee-card footer {
   margin-top: auto;
 }
 
-.test-cell:last-child { border-right: none; }
-
 .test-quote {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--text-dim);
   line-height: 1.8;
   font-style: italic;
   flex: 1;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .test-quote::before {
@@ -769,16 +786,9 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .test-grid {
-    grid-template-columns: 1fr;
+  .marquee-card {
+    width: 300px;
   }
-
-  .test-cell {
-    border-right: none;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .test-cell:last-child { border-bottom: none; }
 }
 
 @media (max-width: 700px) {
@@ -892,5 +902,9 @@ footer {
 
   .hero-word {
     transition: none !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
   }
 }
