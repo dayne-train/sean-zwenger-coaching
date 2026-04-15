@@ -817,6 +817,13 @@ footer {
 
   .hero-actions {
     margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-gold {
+    font-size: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    white-space: nowrap;
   }
 
   .hero-proof {
