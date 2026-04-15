@@ -78,7 +78,7 @@ button:focus:not(:focus-visible) {
 /* ================================================
    NAV
    ================================================ */
-nav {
+.site-nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
@@ -89,7 +89,7 @@ nav {
   transition: all 0.4s ease;
 }
 
-nav.scrolled {
+.site-nav.scrolled {
   background: rgba(14, 17, 23, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -784,8 +784,8 @@ footer {
   .nav-links { display: none; }
   .mobile-toggle { display: flex; }
 
-  nav { padding: 1.25rem 1.5rem; }
-  nav.scrolled { padding: 1rem 1.5rem; }
+  .site-nav { padding: 1.25rem 1.5rem; }
+  .site-nav.scrolled { padding: 1rem 1.5rem; }
   section { padding: 5rem 1.5rem; }
   .hero { padding: 6rem 1.5rem 4rem; }
   .cta-section { padding: 6rem 1.5rem; }
