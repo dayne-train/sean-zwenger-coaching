@@ -91,7 +91,7 @@ if (words.length > 1) {
       }, 500);
 
       words[current].classList.add('active');
-    }, 2800);
+    }, 4500);
   }
 }
 
